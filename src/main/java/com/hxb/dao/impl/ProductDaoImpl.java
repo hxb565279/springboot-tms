@@ -1,7 +1,7 @@
 package com.hxb.dao.impl;
 
-import com.cui.springboot_tms.dao.ProductDao;
-import com.cui.springboot_tms.pojo.EASYBUY_PRODUCT;
+import com.hxb.dao.ProductDao;
+import com.hxb.pojo.EASYBUY_PRODUCT;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -37,7 +37,7 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public List<EASYBUY_PRODUCT> findByCid(int categoryID) {
 //        select * from easybuy_product where epc_id=31
-        List<EASYBUY_PRODUCT> list = jdbcTemplate.query("select * from easybuy_product where epc_id=?", productMapper, categoryID);
+        List<EASYBUY_PRODUCT> list = jdbcTemplate.query("select * from  `springboot-tms`.easybuy_product where epc_id=?", productMapper, categoryID);
         return list;
     }
 }
