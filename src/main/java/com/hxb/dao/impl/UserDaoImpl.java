@@ -11,9 +11,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * @author 和学博
- */
 @Repository
 public class UserDaoImpl implements UserDao {
     @Autowired

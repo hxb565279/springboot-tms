@@ -1,7 +1,7 @@
 package com.hxb.dao.impl;
 
-import com.hxb.dao.CategoryDao;
-import com.hxb.pojo.EASYBUY_PRODUCT_CATEGORY;
+import com.cui.springboot_tms.dao.CategoryDao;
+import com.cui.springboot_tms.pojo.EASYBUY_PRODUCT_CATEGORY;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
