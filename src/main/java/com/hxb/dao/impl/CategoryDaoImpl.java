@@ -1,7 +1,7 @@
 package com.hxb.dao.impl;
 
-import com.cui.springboot_tms.dao.CategoryDao;
-import com.cui.springboot_tms.pojo.EASYBUY_PRODUCT_CATEGORY;
+import com.hxb.dao.CategoryDao;
+import com.hxb.pojo.EASYBUY_PRODUCT_CATEGORY;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -29,7 +29,7 @@ public class CategoryDaoImpl implements CategoryDao {
 
     @Override
     public List<EASYBUY_PRODUCT_CATEGORY> findAll() {
-        List<EASYBUY_PRODUCT_CATEGORY> list = jdbcTemplate.query("select * from easybuy_product_category where EPC_PARENT_ID=0", categoryMapper);
+        List<EASYBUY_PRODUCT_CATEGORY> list = jdbcTemplate.query("select * from  `springboot-tms`.easybuy_product_category where EPC_PARENT_ID=0", categoryMapper);
         return list;
     }
 }

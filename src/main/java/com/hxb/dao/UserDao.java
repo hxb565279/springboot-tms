@@ -1,8 +1,8 @@
 package com.hxb.dao;
 
-import com.cui.springboot_tms.pojo.EASYBUY_USER;
+import com.hxb.pojo.EASYBUY_USER;
 
 public interface UserDao {
 
-    public EASYBUY_USER login(String name,String password);
+    public EASYBUY_USER login(String name, String password);
 }

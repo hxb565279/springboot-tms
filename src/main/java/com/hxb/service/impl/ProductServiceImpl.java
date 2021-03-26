@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author 和学博
+ */
 @Service
 public class ProductServiceImpl implements ProductService {
     @Autowired
