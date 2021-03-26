@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #tb_category{
+            width: 500px;
+            border: 1px solid gray;
+            border-collapse: collapse;
+            text-align: center;
+            margin: 0 auto;
+        }
+        #tb_category td{
+            border: 1px dashed gray;
+        }
+
+        #tb_category tr:nth-child(2n+1){
+            background-color: orange;
+        }
+
+        #tb_category tr:nth-child(1){
+            background-color: grey;
+        }
+    </style>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script>
+        function testGetCategoryAll(){
+            $.ajax({
+                url:"category/findAll",
+                type:"post",
+                success:function(data){
+                    // alert(data);
+                //    将JSON格式的文本转成JSON对象
+                    var categoryArray = JSON.parse(data);
+                    var content = "<tr><td>类别ID</td><td>类别名称</td></tr>";
+                    for(var i = 0;i<categoryArray.length;i++){
+                        var category = categoryArray[i];
+                        content = content+"<tr><td>"+category.EPC_ID+"</td><td>"+category.EPC_NAME+"</td></tr>";
+                    }
+
+                    $("#tb_category").html(content);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>欢迎进入托马斯商城</h1>
+    <button onclick="testGetCategoryAll()">显示所有商品类别</button>
+    <hr>
+    <table id="tb_category">
+
+    </table>
+</body>
+</html>
